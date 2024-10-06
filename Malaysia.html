@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaysia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0052B4, #FFFFFF, #FF0000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        h1 {
+            text-align: center;
+            color: #ffffff;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0;
+            box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        .image-container {
+            flex: none;
+            width: 15cm;
+            height: 15cm;
+            padding-left: 120px;
+            padding-top: 50px;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        .button-container {
+            position: fixed;
+            top: 50%;
+            right: 50px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 20px;
+        }
+        .button {
+            width: 200px;
+            height: 60px;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .button:hover {
+            background-color: rgba(255, 0, 0, 1);
+            transform: translateX(-10px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+        }
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: white;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-30px) translateX(-50%);}
+            60% {transform: translateY(-15px) translateX(-50%);}
+        }
+    </style>
+    <script>
+        function redirectToCO2Page() {
+            window.location.href = 'Malaysia-co2.html';
+        }
+        function redirectToMethanePage() {
+            window.location.href = 'Malaysia-methane.html';
+        }
+        function redirectToTempPage() {
+            window.location.href = 'Malaysia-temp.html';
+        }
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.pageYOffset;
+            document.body.style.backgroundPosition = "0% " + (50 + scrollPosition * 0.1) + "%";
+        });
+    </script>
+</head>
+<body>
+    <h1>Malaysia</h1>
+    <div class="content-container">
+        <div class="image-container">
+            <img src="malaysia.jpg" alt="Malaysia Image">
+        </div>
+    </div>
+    <div class="button-container">
+        <button class="button" onclick="redirectToCO2Page()">CO2 Emission</button>
+        <button class="button" onclick="redirectToMethanePage()">Methane Emissions</button>
+        <button class="button" onclick="redirectToTempPage()">Temperature Data</button>
+    </div>
+    <div class="scroll-indicator">↓</div>
+</body>
+</html>
